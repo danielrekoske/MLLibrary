@@ -75,3 +75,41 @@ class NearestNeighbor:
                     min_idx = j
             distances[i], distances[min_idx] = distances[min_idx], distances[i]
             indices[i], indices[min_idx] = indices[min_idx], indices[i]
+
+# Define distance functions
+import math
+
+def euclidean_distance(point1, point2):
+    return math.sqrt(sum((x - y) ** 2 for x, y in zip(point1, point2)))
+
+def manhattan_distance(point1, point2):
+    return sum(abs(x - y) for x, y in zip(point1, point2))
+
+def minkowski_distance(point1, point2, p):
+    return sum(abs(x - y) ** p for x, y in zip(point1, point2)) ** (1 / p)
+
+def chebyshev_distance(point1, point2):
+    return max(abs(x - y) for x, y in zip(point1, point2))
+
+def cosine_similarity(point1, point2):
+    dot_product = sum(x * y for x, y in zip(point1, point2))
+    magnitude1 = math.sqrt(sum(x ** 2 for x in point1))
+    magnitude2 = math.sqrt(sum(y ** 2 for y in point2))
+    return dot_product / (magnitude1 * magnitude2)
+
+def hamming_distance(point1, point2):
+    return sum(x != y for x, y in zip(point1, point2))
+
+def jaccard_distance(set1, set2):
+    intersection_size = len(set1.intersection(set2))
+    union_size = len(set1.union(set2))
+    return 1 - (intersection_size / union_size)
+
+def correlation_distance(point1, point2):
+    n = len(point1)
+    mean1 = sum(point1) / n
+    mean2 = sum(point2) / n
+    covariance = sum((x - mean1) * (y - mean2) for x, y in zip(point1, point2)) / n
+    std_dev1 = math.sqrt(sum((x - mean1) ** 2 for x in point1) / n)
+    std_dev2 = math.sqrt(sum((y - mean2) ** 2 for y in point2) / n)
+    return 1 - (covariance / (std_dev1 * std_dev2))
