@@ -15,20 +15,20 @@ The fundamental concept behind the nearest neighbors classifier is to assign a l
 The choice of distance metric is crucial in nearest neighbors classification. The most commonly used distance metrics are Euclidean distance, Manhattan distance, and Minkowski distance. 
 
 ### Euclidean Distance
-Euclidean distance between two points \((x_1, y_1)\) and \((x_2, y_2)\) in a two-dimensional space is given by:
+Euclidean distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ in a two-dimensional space is given by:
 \[ \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
 
 ### Manhattan Distance
-Manhattan distance between two points \((x_1, y_1)\) and \((x_2, y_2)\) is the sum of the absolute differences of their coordinates:
+Manhattan distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ is the sum of the absolute differences of their coordinates:
 \[ |x_2 - x_1| + |y_2 - y_1| \]
 
 ### Minkowski Distance
 Minkowski distance is a generalization of Euclidean and Manhattan distances and is defined as:
 \[ \left( \sum_{i=1}^{n} |x_{i2} - x_{i1}|^p \right)^{\frac{1}{p}} \]
-where \( p \) is a parameter. When \( p = 2 \), it becomes Euclidean distance, and when \( p = 1 \), it becomes Manhattan distance.
+where $ p $ is a parameter. When $ p = 2 $, it becomes Euclidean distance, and when $ p = 1 $, it becomes Manhattan distance.
 
 ## K-Nearest Neighbors (KNN)
-A variation of the nearest neighbors classifier is the K-nearest neighbors algorithm, where instead of considering only the single nearest neighbor, it considers the \( k \) nearest neighbors and makes the classification decision by majority voting among them.
+A variation of the nearest neighbors classifier is the K-nearest neighbors algorithm, where instead of considering only the single nearest neighbor, it considers the $ k $ nearest neighbors and makes the classification decision by majority voting among them.
 
 ## Conclusion
 Nearest neighbors classifier is a simple yet effective algorithm for classification tasks. It's particularly useful when the decision boundary is highly irregular or when dealing with small to medium-sized datasets. However, it can be computationally expensive for large datasets due to the need to calculate distances to all training instances.
