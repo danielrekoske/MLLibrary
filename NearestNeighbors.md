@@ -16,15 +16,15 @@ The choice of distance metric is crucial in nearest neighbors classification. Th
 
 ### Euclidean Distance
 Euclidean distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ in a two-dimensional space is given by:
-\[ \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
+$ \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} $
 
 ### Manhattan Distance
 Manhattan distance between two points $(x_1, y_1)$ and $(x_2, y_2)$ is the sum of the absolute differences of their coordinates:
-\[ |x_2 - x_1| + |y_2 - y_1| \]
+$ |x_2 - x_1| + |y_2 - y_1| $
 
 ### Minkowski Distance
 Minkowski distance is a generalization of Euclidean and Manhattan distances and is defined as:
-\[ \left( \sum_{i=1}^{n} |x_{i2} - x_{i1}|^p \right)^{\frac{1}{p}} \]
+$ \left( \sum_{i=1}^{n} |x_{i2} - x_{i1}|^p \right)^{\frac{1}{p}} $
 where $ p $ is a parameter. When $ p = 2 $, it becomes Euclidean distance, and when $ p = 1 $, it becomes Manhattan distance.
 
 ## K-Nearest Neighbors (KNN)
