@@ -113,3 +113,16 @@ def correlation_distance(point1, point2):
     std_dev1 = math.sqrt(sum((x - mean1) ** 2 for x in point1) / n)
     std_dev2 = math.sqrt(sum((y - mean2) ** 2 for y in point2) / n)
     return 1 - (covariance / (std_dev1 * std_dev2))
+
+nn = NearestNeighbor(distance_function=euclidean_distance)
+
+# Sample dataset and labels
+dataset = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+labels = ['A', 'B', 'C']
+
+# Data point for which to find the nearest neighbor
+data_point = [3, 4, 5]
+
+# Find the nearest neighbor
+nearest_neighbor_labels = nn.find_nearest_neighbor(data_point, dataset, labels)
+print("Nearest neighbor labels:", nearest_neighbor_labels)
